@@ -2,12 +2,17 @@
   "name": "chatapp",
   "version": "0.1.0",
   "description": "Basic chat application utilizing socket connections and OAuth authentication",
-  "main": "index.js",
+  "main": "dist/index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index.js",
+    "postinstall": "npm run build",
+    "build": "tsc && npm run lint && npm run test",
+    "test": "jest -c jest.config.json",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "watch:build": "tsc -w"
   },
   "keywords": [
     "Typescript",
@@ -20,5 +25,27 @@
     "Chat"
   ],
   "author": "Nicholas Abbott",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/cookie-parser": "^1.4.1",
+    "@types/express": "^4.16.0",
+    "@types/express-session": "^1.15.10",
+    "@types/jest": "^23.1.0",
+    "@types/node": "^10.3.3",
+    "@types/passport": "^0.4.5",
+    "jest": "^23.1.0",
+    "nyc": "^12.0.2",
+    "ts-jest": "^22.4.6",
+    "tslint": "^5.10.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "passport": "^0.4.0"
+  }
 }
