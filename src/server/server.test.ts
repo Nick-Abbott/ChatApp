@@ -1,4 +1,4 @@
-import { default as Server } from './server';
+import { default as Server } from './Server';
 
 describe('Server', () => {
   describe('.bootstrap()', () => {

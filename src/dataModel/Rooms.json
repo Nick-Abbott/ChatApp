@@ -1,0 +1,17 @@
+{
+  "General": {
+    "capacity": 100,
+    "multiply": false,
+    "permission": "GUEST"
+  },
+  "Fun": {
+    "capacity": 50,
+    "multiply": true,
+    "permission": "MEMBER"
+  },
+  "Admin": {
+    "capacity": 20,
+    "multiply": false,
+    "permission": "ADMIN"
+  }
+}
